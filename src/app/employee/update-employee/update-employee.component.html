@@ -1,0 +1,29 @@
+<form (ngSubmit) = "onSubmit()" name="employee">
+    <h2>Update Employee</h2>
+    <div class="row">
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Name"
+          [(ngModel)] = "employee.name" name="name" id="name" required>
+        </div>
+        <div class="col">
+          <input type="email" class="form-control" placeholder="Email"
+          [(ngModel)] = "employee.email" name="email" id="email" required>
+        </div>
+    </div>
+  
+      <br><br>
+    <div class="row">
+          <div class="col">
+            <input type="text" class="form-control" placeholder="Designation"
+            [(ngModel)] = "employee.designation" name="designation" id="designation" required>
+          </div>
+          <div class="col">
+            <input type="number" class="form-control" placeholder="Salary"
+            [(ngModel)] = "employee.salary" name="salary" id="salary" required>
+          </div>
+    </div>
+        
+    <button class="btn btn-success" type="submit">Submit</button>
+  </form>
+  <br><br>
+  
