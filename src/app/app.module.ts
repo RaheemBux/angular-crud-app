@@ -9,6 +9,9 @@ import { LoginComponent } from './login/login.component';
 import { CreateEmployeeComponent } from './employee/create-employee/create-employee.component';
 import { FormsModule } from '@angular/forms';
 import { UpdateEmployeeComponent } from './employee/update-employee/update-employee.component';
+import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
+import { AuthGuard } from './auth.guard';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,9 @@ import { UpdateEmployeeComponent } from './employee/update-employee/update-emplo
     HomeComponent,
     LoginComponent,
     CreateEmployeeComponent,
-    UpdateEmployeeComponent
+    UpdateEmployeeComponent,
+    FooterComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +30,7 @@ import { UpdateEmployeeComponent } from './employee/update-employee/update-emplo
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
