@@ -12,6 +12,7 @@ import { UpdateEmployeeComponent } from './employee/update-employee/update-emplo
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { AuthGuard } from './auth.guard';
+import {NgxPaginationModule} from 'ngx-pagination'; 
 
 @NgModule({
   declarations: [
@@ -28,7 +29,9 @@ import { AuthGuard } from './auth.guard';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgxPaginationModule
+    
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Employee } from './employee';
+import { PaginationResponse } from '../util/paginationResponse';
 
 @Injectable({
   providedIn: 'root'
@@ -37,6 +38,9 @@ export class EmployeeService {
   }
   updateEmployee(employee: Employee): Observable<Object>{
     return this.http.post(`${this.baseURL}`+'/employee/update',employee,this.httpHeader);
+  }
+  getAllWithPagination(body: any): Observable<PaginationResponse>{
+    return this.http.post(`${this.baseURL}`+'/employee/views',body,this.httpHeader);
   }
   
 }

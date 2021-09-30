@@ -14,7 +14,7 @@
                     <th colspan="2">Action</th>
                 </thead>
                 <tbody>
-                    <tr *ngFor = "let employee of employees">
+                    <tr *ngFor = "let employee of employees | paginate: paginationParams">
                         <td>{{employee.id}}</td>
                         <td>{{employee.name}}</td>
                         <td>{{employee.email}}</td>
@@ -25,7 +25,9 @@
                     </tr>
                 </tbody>
             </table>
-
+            <pagination-controls 
+                (pageChange)="pageChange($event)" 
+            ></pagination-controls>
         </div>
 
     </div>

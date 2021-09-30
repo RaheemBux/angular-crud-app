@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Employee } from './employee';
 import { EmployeeService } from './employee.service';
+import { PaginationParams } from '../util/paginationParams';
 
 @Component({
   selector: 'app-employee',
@@ -11,11 +12,12 @@ import { EmployeeService } from './employee.service';
 export class EmployeeComponent implements OnInit {
 
   employees: Employee [] = [];
+  paginationParams : PaginationParams = new PaginationParams();
 
   constructor(private employeeService: EmployeeService,private router : Router) { }
 
   ngOnInit(): void {
-    this.getEmployees();
+    this.getAllEmployeesWithPagination(this.paginationParams);
   }
   getEmployees(){
     this.employeeService.getEmployees().subscribe((data : Employee []) =>{
@@ -30,6 +32,17 @@ export class EmployeeComponent implements OnInit {
   }
   updateEmployee(id:number){
     this.router.navigate(['update-employee',id]);
+  }
+  getAllEmployeesWithPagination(params:any){
+    this.employeeService.getAllWithPagination(params).subscribe(response =>{
+      this.paginationParams.totalItems = response.totalElements;
+      this.employees = response.data;
+    });
+  }
+  pageChange(page:number){
+    this.paginationParams.currentPage = page-1;
+    this.getAllEmployeesWithPagination(this.paginationParams);
+    this.paginationParams.currentPage = page;
   }
 
 }
