@@ -8,7 +8,6 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { CreateEmployeeComponent } from './employee/create-employee/create-employee.component';
 import { FormsModule } from '@angular/forms';
-import { UpdateEmployeeComponent } from './employee/update-employee/update-employee.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { AuthGuard } from './auth.guard';
@@ -21,7 +20,6 @@ import {NgxPaginationModule} from 'ngx-pagination';
     HomeComponent,
     LoginComponent,
     CreateEmployeeComponent,
-    UpdateEmployeeComponent,
     FooterComponent,
     HeaderComponent
   ],

@@ -40,7 +40,7 @@ export class EmployeeService {
     return this.http.post(`${this.baseURL}`+'/employee/update',employee,this.httpHeader);
   }
   getAllWithPagination(body: any): Observable<PaginationResponse>{
-    return this.http.post(`${this.baseURL}`+'/employee/views',body,this.httpHeader);
+    return this. http.post(`${this.baseURL}`+'/employee/views',body,this.httpHeader);
   }
   
 }

@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth.guard';
 import { CreateEmployeeComponent } from './employee/create-employee/create-employee.component';
 import { EmployeeComponent } from './employee/employee.component';
-import { UpdateEmployeeComponent } from './employee/update-employee/update-employee.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 
@@ -28,8 +27,8 @@ const routes: Routes = [
     canActivate:[AuthGuard]
   },
   {
-    path:'update-employee/:id',
-    component:UpdateEmployeeComponent,
+    path:'create-employee/:id',
+    component:CreateEmployeeComponent,
     canActivate:[AuthGuard]
   }
 ];

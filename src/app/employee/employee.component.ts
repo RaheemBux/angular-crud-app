@@ -12,6 +12,7 @@ import { PaginationParams } from '../util/paginationParams';
 export class EmployeeComponent implements OnInit {
 
   employees: Employee [] = [];
+
   paginationParams : PaginationParams = new PaginationParams();
 
   constructor(private employeeService: EmployeeService,private router : Router) { }
@@ -31,7 +32,7 @@ export class EmployeeComponent implements OnInit {
     })
   }
   updateEmployee(id:number){
-    this.router.navigate(['update-employee',id]);
+    this.router.navigate(['create-employee',id]);
   }
   getAllEmployeesWithPagination(params:any){
     this.employeeService.getAllWithPagination(params).subscribe(response =>{

@@ -23,7 +23,15 @@
           [(ngModel)] = "employee.salary" name="salary" id="salary" required>
         </div>
   </div>
-      
+  <div class="row">
+    <div class="col">
+      <select  class="form-control" [(ngModel)]="employee.department" name="department">
+        <option *ngFor="let department of departments" value={{department.id}}> {{department.name}} </option>
+      </select>
+     <div> {{employee.department}}</div>
+    </div>
+
+  </div>    
   <button class="btn btn-success" type="submit">Submit</button>
 </form>
 <br><br>
